@@ -2,5 +2,5 @@
 set -e
 pkg=$(go list)
 for dir in $(echo $@|xargs -n1 dirname|sort -u); do
-  go vet --composites=false $pkg/$dir
+  go vet --composites=false --stdmethods=false $pkg/$dir
 done
